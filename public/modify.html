@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Page</title>
+    <!-- <link rel="stylesheet" href="./bookList.css"> -->
+    <style>
+        body {
+    color: #333;
+}
+
+h1,
+h1>span {
+    position: relative;
+}
+
+h1>span::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #c7c6c6;
+    position: absolute;
+    bottom: 7px;
+    z-index: -1;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+table td {
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9em;
+    padding: 10px 3px;
+
+}
+
+table td:nth-child(2) {
+    width: 100%;
+}
+
+input {
+    border: 0;
+    border-left: 1px solid #ccc;
+}
+
+input:focus {
+    outline: none;
+}
+
+fieldset {
+    margin-bottom: 10px;
+}
+
+form>input {
+    background-color: rgb(5, 5, 5);
+    border: 0;
+    padding: 4px 5px 5px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+    <h1><span>Modify Page</span></h1>
+    <form method="post">
+        <fieldset>
+            <legend>Modify Data</legend>
+            <table>
+                <tr>
+                    <td><label>genre</label></td>
+                    <td><input type="text" name="genre" value="<%= data.genre %>"></td>
+                </tr>
+                <tr>
+                    <td><label>name</label></td>
+                    <td><input type="text" name="name" value="<%= data.name %>"></td>
+                </tr>
+                <tr>
+                    <td><label>writer</label></td>
+                    <td><input type="text" name="writer" value="<%= data.writer %>"></td>
+                </tr>
+                <!-- <tr>
+                    <td><label>releasedate</label></td>
+                    <td><input type="datetime" name="releasedate" value="<%= data.releasedate %>"></td>
+                </tr> -->
+            </table>
+        </fieldset>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
